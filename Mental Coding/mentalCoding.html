@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Coding - BrainScore</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="mentalCoding.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <a href="../index.html" class="back-btn">Back</a>
+            <h1>Mental Coding</h1>
+            <div class="progress">Item <span id="currentItem">1</span>/10</div>
+        </header>
+
+        
+        <div class="screen" id="instructionsScreen">
+            <div class="instructions-card">
+                <h2>Mental Coding</h2>
+                <p>Test your ability to memorize and recall symbol-number associations.</p>
+                
+                <div class="example">
+                    <h3>Example (Study Phase - 10 seconds)</h3>
+                    <div class="coding-grid example-grid">
+                        <div class="coding-column">
+                            <span class="symbol">A</span>
+                            <div class="link-line"></div>
+                            <span class="number">3</span>
+                        </div>
+                        <div class="coding-column">
+                            <span class="symbol">B</span>
+                            <div class="link-line"></div>
+                            <span class="number">7</span>
+                        </div>
+                    </div>
+                    <p class="example-note">Memorize: A ↔ 3, B ↔ 7</p>
+                </div>
+
+                <div class="example">
+                    <h3>Example (Test Phase)</h3>
+                    <div class="coding-grid example-grid">
+                        <div class="coding-column">
+                            <span class="symbol">7</span>
+                            <div class="link-line faded"></div>
+                            <span class="number input-example">B</span>
+                        </div>
+                        <div class="coding-column">
+                            <span class="symbol">A</span>
+                            <div class="link-line faded"></div>
+                            <span class="number input-example">3</span>
+                        </div>
+                    </div>
+                    <p class="example-note">Fill in the equivalent for each symbol</p>
+                </div>
+
+                <ul class="rules">
+                    <li>You have 10 seconds to memorize each coding scheme</li>
+                    <li>Then fill in the equivalent for each shuffled symbol</li>
+                    <li>Items increase from 2 pairs to 6 pairs</li>
+                    <li>Each correct pair earns 1 point</li>
+                </ul>
+                <div class="demographics-inputs" style="display: flex; gap: 12px; margin-top: 16px; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 140px;">
+                        <label for="ageGroup" style="display: block; font-size: 0.85rem; margin-bottom: 4px; color: #555;">Age Group</label>
+                        <select id="ageGroup" required style="width: 100%; padding: 8px 10px; border-radius: 8px; border: 1px solid #ddd; font-size: 0.9rem; background: #fff;">
+                            <option value="">Select age group</option>
+                            <option value="Group 1: 13-14">Group 1: 13-14</option>
+                            <option value="Group 2: 15-16">Group 2: 15-16</option>
+                            <option value="Group 3: 17-18">Group 3: 17-18</option>
+                            <option value="Group 4: 19-20">Group 4: 19-20</option>
+                            <option value="Group 5: 21-25">Group 5: 21-25</option>
+                            <option value="Group 6: 26-30">Group 6: 26-30</option>
+                            <option value="Group 7: 31-35">Group 7: 31-35</option>
+                            <option value="Group 8: 36-40">Group 8: 36-40</option>
+                            <option value="Group 9: 41-45">Group 9: 41-45</option>
+                            <option value="Group 10: 46-50">Group 10: 46-50</option>
+                            <option value="Group 11: 51-55">Group 11: 51-55</option>
+                            <option value="Group 12: 56-60">Group 12: 56-60</option>
+                            <option value="Group 13: 61-65">Group 13: 61-65</option>
+                        </select>
+                    </div>
+                    <div style="flex: 1; min-width: 140px;">
+                        <label for="nickname" style="display: block; font-size: 0.85rem; margin-bottom: 4px; color: #555;">Nickname</label>
+                        <input type="text" id="nickname" maxlength="40" required placeholder="Enter nickname" style="width: 100%; padding: 8px 10px; border-radius: 8px; border: 1px solid #ddd; font-size: 0.9rem; background: #fff;">
+                    </div>
+                    <div style="flex: 1; min-width: 140px;">
+                        <label for="genderSelect" style="display: block; font-size: 0.85rem; margin-bottom: 4px; color: #555;">Gender</label>
+                        <select id="genderSelect" required style="width: 100%; padding: 8px 10px; border-radius: 8px; border: 1px solid #ddd; font-size: 0.9rem; background: #fff;">
+                            <option value="">Select gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                            <option value="Prefer not to say">Prefer not to say</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="primary-btn" id="startBtn">Start Test</button>
+            </div>
+        </div>
+
+        
+        <div class="screen hidden" id="studyScreen">
+            <div class="timer-display">
+                <span class="timer-icon">⏱</span>
+                <span class="timer-value" id="studyTimer">10</span>
+                <span class="timer-unit">seconds</span>
+            </div>
+            <div class="study-card">
+                <h3>Memorize the associations</h3>
+                <div class="coding-grid" id="studyGrid"></div>
+            </div>
+        </div>
+
+        
+        <div class="screen hidden" id="testScreen">
+            <div class="test-card">
+                <h3>Fill in the equivalents</h3>
+                <div class="coding-grid" id="testGrid"></div>
+                <button class="primary-btn" id="submitBtn">Submit</button>
+            </div>
+        </div>
+
+        
+        <div class="screen hidden" id="resultsScreen">
+            <div class="results-card">
+                <h2>Test Complete!</h2>
+                <div class="final-score">
+                    <span class="score-label">Your Score</span>
+                    <span class="score-value" id="finalScore">0</span>
+                    <span class="score-max">out of 40</span>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="primary-btn" id="retryBtn">Try Again</button>
+                    <a href="../index.html" class="secondary-btn">Back to Tests</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <form name="Mental Coding Results" method="POST" action="https://formspree.io/f/xreynqzk" class="hidden" id="testResultForm">
+        <input type="hidden" name="test" value="Mental Coding">
+        <input type="hidden" name="score" id="formScore">
+        <input type="hidden" name="ageGroup" id="formAgeGroup">
+        <input type="hidden" name="gender" id="formGender">
+        <input type="hidden" name="nickname" id="formNickname">
+        <input type="hidden" name="timestamp" id="formTimestamp">
+    </form>
+
+    <script src="mentalCoding.js"></script>
+</body>
+</html>

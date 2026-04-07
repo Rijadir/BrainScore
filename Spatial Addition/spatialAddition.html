@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spatial Addition - BrainScore</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="spatialAddition.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <a href="../index.html" class="back-btn">Back</a>
+            <h1>Spatial Addition</h1>
+            <div class="header-info">
+                <div class="lives" id="lives">❤️ ❤️ ❤️</div>
+                <div class="progress">Item <span id="currentItem">1</span>/16</div>
+            </div>
+        </header>
+
+        
+        <div class="screen" id="instructionsScreen">
+            <div class="instructions-card">
+                <h2>Spatial Addition</h2>
+                <p>Test your spatial working memory by adding two grids together.</p>
+                
+                <div class="example">
+                    <h3>How It Works</h3>
+                    <div class="example-grids">
+                        <div class="mini-grid">
+                            <div class="mini-cell gray"></div>
+                            <div class="mini-cell"></div>
+                            <div class="mini-cell"></div>
+                            <div class="mini-cell gray"></div>
+                        </div>
+                        <span class="plus-sign">+</span>
+                        <div class="mini-grid">
+                            <div class="mini-cell gray"></div>
+                            <div class="mini-cell gray"></div>
+                            <div class="mini-cell"></div>
+                            <div class="mini-cell"></div>
+                        </div>
+                        <span class="equals-sign">=</span>
+                        <div class="mini-grid">
+                            <div class="mini-cell black"></div>
+                            <div class="mini-cell gray"></div>
+                            <div class="mini-cell"></div>
+                            <div class="mini-cell gray"></div>
+                        </div>
+                    </div>
+                    <p class="example-note">Black = ball in both grids</p>
+                </div>
+
+                <ul class="rules">
+                    <li>First grid is shown for 5 seconds</li>
+                    <li>Second grid is shown for 5 seconds</li>
+                    <li>Tap cells to place gray balls (single)</li>
+                    <li>Tap again for black balls (overlapping)</li>
+                    <li>Tap a third time to clear the cell</li>
+                    <li>You have 3 lives - game ends when all are lost</li>
+                </ul>
+                <div class="demographics-inputs" style="display: flex; gap: 12px; margin-top: 16px; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 140px;">
+                        <label for="ageGroup" style="display: block; font-size: 0.85rem; margin-bottom: 4px; color: #555;">Age Group</label>
+                        <select id="ageGroup" required style="width: 100%; padding: 8px 10px; border-radius: 8px; border: 1px solid #ddd; font-size: 0.9rem; background: #fff;">
+                            <option value="">Select age group</option>
+                            <option value="Group 1: 13-14">Group 1: 13-14</option>
+                            <option value="Group 2: 15-16">Group 2: 15-16</option>
+                            <option value="Group 3: 17-18">Group 3: 17-18</option>
+                            <option value="Group 4: 19-20">Group 4: 19-20</option>
+                            <option value="Group 5: 21-25">Group 5: 21-25</option>
+                            <option value="Group 6: 26-30">Group 6: 26-30</option>
+                            <option value="Group 7: 31-35">Group 7: 31-35</option>
+                            <option value="Group 8: 36-40">Group 8: 36-40</option>
+                            <option value="Group 9: 41-45">Group 9: 41-45</option>
+                            <option value="Group 10: 46-50">Group 10: 46-50</option>
+                            <option value="Group 11: 51-55">Group 11: 51-55</option>
+                            <option value="Group 12: 56-60">Group 12: 56-60</option>
+                            <option value="Group 13: 61-65">Group 13: 61-65</option>
+                        </select>
+                    </div>
+                    <div style="flex: 1; min-width: 140px;">
+                        <label for="nickname" style="display: block; font-size: 0.85rem; margin-bottom: 4px; color: #555;">Nickname</label>
+                        <input type="text" id="nickname" maxlength="40" required placeholder="Enter nickname" style="width: 100%; padding: 8px 10px; border-radius: 8px; border: 1px solid #ddd; font-size: 0.9rem; background: #fff;">
+                    </div>
+                    <div style="flex: 1; min-width: 140px;">
+                        <label for="genderSelect" style="display: block; font-size: 0.85rem; margin-bottom: 4px; color: #555;">Gender</label>
+                        <select id="genderSelect" required style="width: 100%; padding: 8px 10px; border-radius: 8px; border: 1px solid #ddd; font-size: 0.9rem; background: #fff;">
+                            <option value="">Select gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                            <option value="Prefer not to say">Prefer not to say</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="primary-btn" id="startBtn">Start Test</button>
+            </div>
+        </div>
+
+        
+        <div class="screen hidden" id="displayScreen">
+            <div class="timer-display">
+                <span class="timer-icon">⏱</span>
+                <span class="timer-value" id="displayTimer">5</span>
+                <span class="timer-unit">seconds</span>
+            </div>
+            <div class="grid-label" id="gridLabel">Grid 1</div>
+            <div class="display-card">
+                <div class="grid" id="displayGrid"></div>
+            </div>
+        </div>
+
+        
+        <div class="screen hidden" id="answerScreen">
+            <div class="answer-card">
+                <h3>Tap to place balls</h3>
+                <div class="grid" id="answerGrid"></div>
+                <button class="primary-btn" id="submitBtn">Submit</button>
+            </div>
+        </div>
+
+        
+        <div class="screen hidden" id="resultsScreen">
+            <div class="results-card">
+                <h2>Test Complete!</h2>
+                <div class="final-score">
+                    <span class="score-label">Your Score</span>
+                    <span class="score-value" id="finalScore">0</span>
+                    <span class="score-max">out of 16</span>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="primary-btn" id="retryBtn">Try Again</button>
+                    <a href="../index.html" class="secondary-btn">Back to Tests</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <form name="Spatial Addition Results" method="POST" action="https://formspree.io/f/mjganwba" class="hidden" id="testResultForm">
+        <input type="hidden" name="test" value="Spatial Addition">
+        <input type="hidden" name="score" id="formScore">
+        <input type="hidden" name="ageGroup" id="formAgeGroup">
+        <input type="hidden" name="gender" id="formGender">
+        <input type="hidden" name="nickname" id="formNickname">
+        <input type="hidden" name="timestamp" id="formTimestamp">
+    </form>
+
+    <script src="spatialAddition.js"></script>
+</body>
+</html>

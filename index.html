@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrainScore - Psychometric Tests</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-text">BrainScore</span>
+            </div>
+            <nav class="nav">
+                <a href="#tests">Tests</a>
+                <a href="#calculator">FSIQ Calculator</a>
+                <a href="#guide">IQ Guide</a>
+                <a href="#classification">Classification</a>
+            </nav>
+        </div>
+    </header>
+
+    
+    <section class="hero">
+        <div class="container">
+            <h1>Measure Your Cognitive Abilities</h1>
+            <p>Psychometric tests designed to evaluate various aspects of intelligence</p>
+        </div>
+    </section>
+
+    
+    <section id="tests" class="tests-section">
+        <div class="container">
+            <h2 class="section-title">Cognitive Tests</h2>
+            <p class="section-subtitle">Select a test to begin your assessment</p>
+            
+            <div class="tests-grid">
+                
+                <div class="test-card">
+                    <div class="test-preview preview-shuffle">
+                        <div class="shuffle-demo">
+                            <div class="shuffle-row">
+                                <span class="shuffle-char">A</span>
+                                <span class="shuffle-char">B</span>
+                                <span class="shuffle-char">C</span>
+                            </div>
+                            <span class="shuffle-arrow">&#8595;</span>
+                            <div class="shuffle-row">
+                                <span class="shuffle-char highlight">C</span>
+                                <span class="shuffle-char highlight">A</span>
+                                <span class="shuffle-char highlight">B</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="test-info">
+                        <h3>Character Shuffle</h3>
+                        <p><span class="test-tag">PSI</span><span class="test-tag time-tag">~5 min</span></p>
+                        <a href="Character Shuffle/characterShuffle.html" class="test-btn">Start Test</a>
+                    </div>
+                </div>
+
+                
+                <div class="test-card">
+                    <div class="test-preview preview-combinatorial">
+                        <div class="combo-demo">
+                            <div class="combo-boxes">
+                                <span class="combo-box">3</span>
+                                <span class="combo-box">1</span>
+                                <span class="combo-box">2</span>
+                            </div>
+                            <div class="combo-buttons">
+                                <span class="combo-btn">1-2</span>
+                                <span class="combo-btn">2-3</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="test-info">
+                        <h3>Combinatorial Operator</h3>
+                        <p><span class="test-tag">FRI</span><span class="test-tag time-tag">~15 min</span></p>
+                        <a href="Combinatorial Operator/combinatorialOperator.html" class="test-btn">Start Test</a>
+                    </div>
+                </div>
+
+                
+                <div class="test-card">
+                    <div class="test-preview preview-diamond">
+                        <div class="diamond-demo">
+                            <span class="diamond-emoji">💎</span>
+                            <span class="diamond-emoji">💎</span>
+                        </div>
+                    </div>
+                    <div class="test-info">
+                        <h3>Diamond Dilemma</h3>
+                        <p><span class="test-tag">FRI</span><span class="test-tag time-tag">~10 min</span></p>
+                        <a href="Diamond Dilemma/diamondDilemma.html" class="test-btn">Start Test</a>
+                    </div>
+                </div>
+
+                
+                <div class="test-card">
+                    <div class="test-preview preview-rotation">
+                        <div class="rotation-demo">
+                            <div class="rotation-grid">
+                                <div class="rotation-cell filled"></div>
+                                <div class="rotation-cell filled"></div>
+                                <div class="rotation-cell"></div>
+                                <div class="rotation-cell filled"></div>
+                                <div class="rotation-cell filled"></div>
+                                <div class="rotation-cell filled"></div>
+                                <div class="rotation-cell"></div>
+                                <div class="rotation-cell filled"></div>
+                                <div class="rotation-cell filled"></div>
+                            </div>
+                            <span class="rotation-arrow">↻</span>
+                            <div class="rotation-grid">
+                                <div class="rotation-cell"></div>
+                                <div class="rotation-cell filled"></div>
+                                <div class="rotation-cell filled"></div>
+                                <div class="rotation-cell filled"></div>
+                                <div class="rotation-cell filled"></div>
+                                <div class="rotation-cell filled"></div>
+                                <div class="rotation-cell filled"></div>
+                                <div class="rotation-cell filled"></div>
+                                <div class="rotation-cell"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="test-info">
+                        <h3>Figure Rotation</h3>
+                        <p><span class="test-tag">VSI</span><span class="test-tag time-tag">~15 min</span></p>
+                        <a href="Figure Rotation/figureRotation.html" class="test-btn">Start Test</a>
+                    </div>
+                </div>
+
+                
+                <div class="test-card">
+                    <div class="test-preview preview-matrix">
+                        <div class="matrix-demo">
+                            <div class="matrix-grid-preview">
+                                <div class="matrix-cell-preview filled-red"></div>
+                                <div class="matrix-cell-preview filled-blue"></div>
+                                <div class="matrix-cell-preview filled-yellow"></div>
+                                <div class="matrix-cell-preview filled-blue"></div>
+                                <div class="matrix-cell-preview filled-yellow"></div>
+                                <div class="matrix-cell-preview filled-red"></div>
+                                <div class="matrix-cell-preview filled-yellow"></div>
+                                <div class="matrix-cell-preview filled-red"></div>
+                                <div class="matrix-cell-preview filled-blue"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="test-info">
+                        <h3>Matrix Reasoning</h3>
+                        <p><span class="test-tag">FRI</span><span class="test-tag time-tag">~20 min</span></p>
+                        <a href="Matrix Reasoning/matrixReasoning.html" class="test-btn">Start Test</a>
+                    </div>
+                </div>
+
+                
+                <div class="test-card">
+                    <div class="test-preview preview-coding">
+                        <div class="coding-demo">
+                            <div class="coding-pair">
+                                <span class="coding-symbol">A</span>
+                                <span class="coding-line"></span>
+                                <span class="coding-number">3</span>
+                            </div>
+                            <div class="coding-pair">
+                                <span class="coding-symbol">B</span>
+                                <span class="coding-line"></span>
+                                <span class="coding-number">7</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="test-info">
+                        <h3>Mental Coding</h3>
+                        <p><span class="test-tag">WMI</span><span class="test-tag time-tag">~3 min</span></p>
+                        <a href="Mental Coding/mentalCoding.html" class="test-btn">Start Test</a>
+                    </div>
+                </div>
+
+                
+                <div class="test-card">
+                    <div class="test-preview preview-selective">
+                        <div class="selective-demo">
+                            <span class="selective-char green">A</span>
+                            <span class="selective-char red">3</span>
+                            <span class="selective-char green">B</span>
+                            <span class="selective-char red">7</span>
+                        </div>
+                    </div>
+                    <div class="test-info">
+                        <h3>Selective Span</h3>
+                        <p><span class="test-tag">WMI</span><span class="test-tag time-tag">~2 min</span></p>
+                        <a href="Selective Span/selectiveSpan.html" class="test-btn">Start Test</a>
+                    </div>
+                </div>
+
+                
+                <div class="test-card">
+                    <div class="test-preview preview-spatial">
+                        <div class="spatial-demo">
+                            <div class="spatial-mini-grid">
+                                <div class="spatial-cell gray"></div>
+                                <div class="spatial-cell"></div>
+                                <div class="spatial-cell"></div>
+                                <div class="spatial-cell gray"></div>
+                            </div>
+                            <span class="spatial-plus">+</span>
+                            <div class="spatial-mini-grid">
+                                <div class="spatial-cell gray"></div>
+                                <div class="spatial-cell gray"></div>
+                                <div class="spatial-cell"></div>
+                                <div class="spatial-cell"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="test-info">
+                        <h3>Spatial Addition</h3>
+                        <p><span class="test-tag">WMI</span><span class="test-tag time-tag">~5 min</span></p>
+                        <a href="Spatial Addition/spatialAddition.html" class="test-btn">Start Test</a>
+                    </div>
+                </div>
+
+                
+                <div class="test-card">
+                    <div class="test-preview preview-symbol">
+                        <div class="symbol-demo">
+                            <div class="demo-symbols-row">
+                                <span class="demo-sym">▲</span>
+                                <span class="demo-sym">★</span>
+                                <span class="demo-sym">♠</span>
+                                <span class="demo-sym">◆</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="test-info">
+                        <h3>Symbol Rush</h3>
+                        <p><span class="test-tag">PSI</span><span class="test-tag time-tag">~1 min</span></p>
+                        <a href="Symbol Rush/symbolRush.html" class="test-btn">Start Test</a>
+                    </div>
+                </div>
+
+                
+                <div class="test-card">
+                    <div class="test-preview preview-visual">
+                        <div class="tetris-demo">
+                            <div class="tetris-piece">
+                                <div class="tetris-row">
+                                    <div class="tetris-cell filled"></div>
+                                    <div class="tetris-cell"></div>
+                                </div>
+                                <div class="tetris-row">
+                                    <div class="tetris-cell filled"></div>
+                                    <div class="tetris-cell filled"></div>
+                                </div>
+                                <div class="tetris-row">
+                                    <div class="tetris-cell"></div>
+                                    <div class="tetris-cell filled"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="test-info">
+                        <h3>Visual Construction</h3>
+                        <p><span class="test-tag">VSI</span><span class="test-tag time-tag">~12 min</span></p>
+                        <a href="Visual Construction/visualConstruction.html" class="test-btn">Start Test</a>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="calculator" class="calculator-section">
+        <div class="container">
+            <h2 class="section-title">FSIQ Calculator</h2>
+            <p class="section-subtitle">Enter your test scores to estimate your Full Scale IQ</p>
+
+            <div class="calculator-container">
+                <div class="age-input-container">
+                    <div class="input-group age-input-group">
+                        <label for="nicknameInput">Nickname</label>
+                        <input type="text" id="nicknameInput" maxlength="40" placeholder="Enter nickname" required>
+                    </div>
+                    <div class="input-group age-input-group">
+                        <label for="genderInput">Gender</label>
+                        <select id="genderInput" required>
+                            <option value="">Select gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                            <option value="Prefer not to say">Prefer not to say</option>
+                        </select>
+                    </div>
+                    <div class="input-group age-input-group">
+                        <label for="ageYears">Age Group</label>
+                        <select id="ageYears" required>
+                            <option value="">Select age group</option>
+                            <option value="Group 1: 13-14">Group 1: 13-14</option>
+                            <option value="Group 2: 15-16">Group 2: 15-16</option>
+                            <option value="Group 3: 17-18">Group 3: 17-18</option>
+                            <option value="Group 4: 19-20">Group 4: 19-20</option>
+                            <option value="Group 5: 21-25">Group 5: 21-25</option>
+                            <option value="Group 6: 26-30">Group 6: 26-30</option>
+                            <option value="Group 7: 31-35">Group 7: 31-35</option>
+                            <option value="Group 8: 36-40">Group 8: 36-40</option>
+                            <option value="Group 9: 41-45">Group 9: 41-45</option>
+                            <option value="Group 10: 46-50">Group 10: 46-50</option>
+                            <option value="Group 11: 51-55">Group 11: 51-55</option>
+                            <option value="Group 12: 56-60">Group 12: 56-60</option>
+                            <option value="Group 13: 61-65">Group 13: 61-65</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="score-inputs">
+                    <div class="input-group">
+                        <label for="score1">Character Shuffle</label>
+                        <input type="number" id="score1" min="0" max="65" placeholder="Score">
+                    </div>
+                    <div class="input-group">
+                        <label for="score2">Combinatorial Operator</label>
+                        <input type="number" id="score2" min="0" max="20" placeholder="Score">
+                    </div>
+                    <div class="input-group">
+                        <label for="score3">Diamond Dilemma</label>
+                        <input type="number" id="score3" min="0" max="20" placeholder="Score">
+                    </div>
+                    <div class="input-group">
+                        <label for="score4">Figure Rotation</label>
+                        <input type="number" id="score4" min="0" max="20" placeholder="Score">
+                    </div>
+                    <div class="input-group">
+                        <label for="score5">Matrix Reasoning</label>
+                        <input type="number" id="score5" min="0" max="20" placeholder="Score">
+                    </div>
+                    <div class="input-group">
+                        <label for="score6">Mental Coding</label>
+                        <input type="number" id="score6" min="0" max="40" placeholder="Score">
+                    </div>
+                    <div class="input-group">
+                        <label for="score7">Selective Span</label>
+                        <input type="number" id="score7" min="0" max="12" placeholder="Score">
+                    </div>
+                    <div class="input-group">
+                        <label for="score8">Spatial Addition</label>
+                        <input type="number" id="score8" min="0" max="16" placeholder="Score">
+                    </div>
+                    <div class="input-group">
+                        <label for="score9">Symbol Rush</label>
+                        <input type="number" id="score9" min="0" max="999" placeholder="Score">
+                    </div>
+                    <div class="input-group">
+                        <label for="score10">Visual Construction</label>
+                        <input type="number" id="score10" min="0" max="20" placeholder="Score">
+                    </div>
+                </div>
+
+                <button id="calculateBtn" class="calculate-btn">Calculate FSIQ</button>
+
+                
+                <form name="FSIQ Results" method="POST" action="https://formspree.io/f/xqeyrprn" class="hidden" id="fsiqForm">
+                    <input type="hidden" name="fsiq" id="formFsiq">
+                    <input type="hidden" name="percentile" id="formPercentile">
+                    <input type="hidden" name="classification" id="formClassification">
+                    <input type="hidden" name="ageYears" id="formAgeYears">
+                    <input type="hidden" name="gender" id="formGender">
+                    <input type="hidden" name="nickname" id="formNickname">
+                    <input type="hidden" name="characterShuffle" id="formScore1">
+                    <input type="hidden" name="combinatorialOperator" id="formScore2">
+                    <input type="hidden" name="diamondDilemma" id="formScore3">
+                    <input type="hidden" name="figureRotation" id="formScore4">
+                    <input type="hidden" name="matrixReasoning" id="formScore5">
+                    <input type="hidden" name="mentalCoding" id="formScore6">
+                    <input type="hidden" name="selectiveSpan" id="formScore7">
+                    <input type="hidden" name="spatialAddition" id="formScore8">
+                    <input type="hidden" name="symbolSprint" id="formScore9">
+                    <input type="hidden" name="visualConstruction" id="formScore10">
+                    <input type="hidden" name="timestamp" id="formTimestamp">
+                </form>
+
+                <div class="result-container" id="resultContainer">
+                    <div class="fsiq-result">
+                        <span class="fsiq-label">Your Estimated FSIQ</span>
+                        <span class="fsiq-score" id="fsiqScore">--</span>
+                        <span class="fsiq-classification" id="fsiqClassification">Enter scores above</span>
+                    </div>
+
+                    <div class="composite-scores" id="compositeScores">
+                        <div class="composite-item" id="friComposite" style="display: none;">
+                            <span class="composite-label">FRI</span>
+                            <span class="composite-value" id="friScore">--</span>
+                        </div>
+                        <div class="composite-item" id="wmiComposite" style="display: none;">
+                            <span class="composite-label">WMI</span>
+                            <span class="composite-value" id="wmiScore">--</span>
+                        </div>
+                        <div class="composite-item" id="vsiComposite" style="display: none;">
+                            <span class="composite-label">VSI</span>
+                            <span class="composite-value" id="vsiScore">--</span>
+                        </div>
+                        <div class="composite-item" id="psiComposite" style="display: none;">
+                            <span class="composite-label">PSI</span>
+                            <span class="composite-value" id="psiScore">--</span>
+                        </div>
+                    </div>
+
+                    <div class="bell-curve-container">
+                        <canvas id="bellCurve"></canvas>
+                        <div class="curve-labels">
+                            <span>40</span>
+                            <span>55</span>
+                            <span>70</span>
+                            <span>85</span>
+                            <span>100</span>
+                            <span>115</span>
+                            <span>130</span>
+                            <span>145</span>
+                            <span>160</span>
+                        </div>
+                    </div>
+
+                    <div class="percentile-info" id="percentileInfo">
+                        <p>Percentile: <span id="percentile">--</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="guide" class="guide-section">
+        <div class="container">
+            <h2 class="section-title">Understanding IQ</h2>
+            <p class="section-subtitle">A comprehensive guide to intelligence quotient</p>
+
+            <div class="guide-grid">
+                <div class="guide-card">
+                    <h3>What is IQ?</h3>
+                    <p>IQ (Intelligence Quotient) is a score derived from standardized tests designed to assess human intelligence. The average IQ is set at 100, with a standard deviation of 15 points. This means about 68% of the population scores between 85 and 115.</p>
+                </div>
+
+                <div class="guide-card guide-card-wide">
+                    <h3>How is it Measured?</h3>
+                    <p>IQ tests measure various cognitive abilities through specialized subtests. These combine to form a Full Scale IQ (FSIQ) that represents overall cognitive ability. The main index scores include:</p>
+                    <ul class="index-list">
+                        <li><strong>WMI (Working Memory Index)</strong> — Measures the ability to hold and manipulate information in short-term memory while performing mental operations.</li>
+                        <li><strong>FRI (Fluid Reasoning Index)</strong> — Assesses the capacity to think logically, solve novel problems, and identify patterns without relying on prior knowledge.</li>
+                        <li><strong>PSI (Processing Speed Index)</strong> — Evaluates the speed and accuracy of visual scanning, decision-making, and mental processing of simple information.</li>
+                        <li><strong>VSI (Visual Spatial Index)</strong> — Measures the ability to analyze and synthesize visual-spatial information, including mental rotation and spatial reasoning.</li>
+                        <li><strong>VCI (Verbal Comprehension Index)</strong> — Assesses verbal reasoning, vocabulary, and the ability to express knowledge verbally.</li>
+                    </ul>
+                </div>
+
+                <div class="guide-card">
+                    <h3>The Bell Curve</h3>
+                    <p>IQ scores follow a normal distribution (bell curve). Most people (about 95%) score between 70 and 130. Scores below 70 or above 130 are considered rare, occurring in only about 2.5% of the population on each end.</p>
+                </div>
+
+                <div class="guide-card">
+                    <h3>What Does IQ Predict?</h3>
+                    <p>Research shows IQ correlates with academic performance, job performance, income, and health outcomes. However, IQ is just one measure of cognitive ability and doesn't capture creativity, emotional intelligence, or practical skills.</p>
+                </div>
+
+                <div class="guide-card">
+                    <h3>Nature vs Nurture</h3>
+                    <p>IQ is influenced by both genetic and environmental factors. Studies suggest heritability ranges from 50-80% in adults. Education, nutrition, and cognitive stimulation during childhood also play significant roles.</p>
+                </div>
+
+                <div class="guide-card">
+                    <h3>Can IQ Change?</h3>
+                    <p>While IQ is relatively stable in adulthood, it can change during childhood and adolescence. Factors like education, cognitive training, and lifestyle can influence IQ scores. The Flynn Effect shows average IQ has increased over generations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="classification" class="classification-section">
+        <div class="container">
+            <h2 class="section-title">IQ Classification</h2>
+            <p class="section-subtitle">Standard classification ranges used in psychometric testing</p>
+
+            <div class="classification-table-container">
+                <table class="classification-table">
+                    <thead>
+                        <tr>
+                            <th>IQ Range</th>
+                            <th>Classification</th>
+                            <th>% of Population</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>145+</td>
+                            <td>Highly Gifted</td>
+                            <td>0.13%</td>
+                        </tr>
+                        <tr>
+                            <td>130-144</td>
+                            <td>Gifted</td>
+                            <td>2.15%</td>
+                        </tr>
+                        <tr>
+                            <td>115-129</td>
+                            <td>Above Average</td>
+                            <td>13.59%</td>
+                        </tr>
+                        <tr>
+                            <td>85-114</td>
+                            <td>Average</td>
+                            <td>68.26%</td>
+                        </tr>
+                        <tr>
+                            <td>70-84</td>
+                            <td>Below Average</td>
+                            <td>13.59%</td>
+                        </tr>
+                        <tr>
+                            <td>Below 70</td>
+                            <td>Low</td>
+                            <td>2.28%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-text">BrainScore</span>
+                </div>
+                <p class="footer-disclaimer">These tests are for educational and entertainment purposes only. For a professional cognitive assessment, please consult a licensed psychologist.</p>
+                <p class="footer-copyright"></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
